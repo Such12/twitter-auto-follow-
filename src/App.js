@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import FollowButton from './Button';
+import automateFollowing from './followUsers';
 
 function App() {
+  const handleFollowAll = async () => {
+    console.log("Follow All button clicked");
+    await automateFollowing();
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <FollowButton onClick={handleFollowAll} />
     </div>
   );
 }
